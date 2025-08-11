@@ -132,7 +132,7 @@ const numbers = '5,10,15'
 
 function count(numberStr) {
     let [n1, n2, n3] = numberStr.split(",").map(Number)
-    let numbers = n1 + n2 +n3
+    let numbers = n1 + n2 + n3
     console.log(numbers)
 }
 
