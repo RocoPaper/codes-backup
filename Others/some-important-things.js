@@ -101,6 +101,19 @@ if (today === Day.MONDAY) {
 
 let dada = 'Hello'
 
+/*
+✅ Summary Table:
+
+| Value   | isNaN(value) | Number.isNaN(value) |
+|---------|--------------|---------------------|
+| 'Hello' | true         | false              |
+| 5       | false        | false              |
+
+
+⚠️ Why does it behave like this?
+- isNaN converts the value to a number, so non-numeric strings become NaN.
+- Number.isNaN does NOT convert, only returns true if the value is literally NaN.
+*/
 console.log(isNaN(dada))
 console.log(Number.isNaN(dada))
 
@@ -429,3 +442,33 @@ setInterval(() => {
         console.log('Result ', num1 + num2)
     }, 3000);
 },3000)
+
+
+/*
+You can calculate compound interest using this formula:
+
+A = P × (1 + r/n)^(n × t)
+
+Where:
+
+A = total amount after interest  
+P = starting amount (principal)  
+r = annual interest rate (in decimal form, e.g., 5% → 0.05)  
+n = how many times the interest is added per year (compounded)  
+t = number of years  
+
+Example:  
+You invest $1,000 at 5% annual interest, compounded monthly, for 3 years.  
+
+P = 1000  
+r = 0.05  
+n = 1  
+t = 3  
+
+A = 1000 × (1 + 0.05/12)^(1 × 3)
+*/
+const compoundInterstCalculator = (p, r, n, t) => {
+    return  p * ((1+(r/n)) ** (t*n))
+}
+
+console.log(compoundInterstCalculator(100, 0.05, 1, 3))
