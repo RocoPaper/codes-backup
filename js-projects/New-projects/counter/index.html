@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(252, 249, 245);
+            height: 100vh;
+            display: grid;
+            place-content: center;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 350px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 7px;
+        }
+        button {
+            font-size: 1.2rem;
+            padding: .5rem 1rem;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 50%;
+        }
+        #plus {
+            background-color: lightgreen;
+        }
+        #minus {
+            background-color: rgb(255, 118, 109);
+        }
+    </style>
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="console.log(this)">Counter</h1>
+        <h2 id="num">0</h2>
+        <button id="minus">-</button>
+        <button id="reset">Reset</button>
+        <button id="plus">+</button>
+    </div>
+
+    <script>
+        let count = 0
+        // const plus = document.getElementById('plus');
+        // const minus = document.getElementById('minus');
+        // const reset = document.getElementById('reset');
+        const num = document.getElementById('num');
+        // const currentNum = Number(num.textContent);
+        // const btns = document.querySelectorAll('button')
+        // btns.forEach(btn => {
+        //     console.log(btn);
+            
+        // });
+
+        // console.log(btns)
+        // function counter() {
+        //     count++
+        //     console.log(count)
+        // }
+
+        // plus.addEventListener('click', () => {
+        //     count++
+        //     num.innerText = count
+        //     console.log(event);
+            
+        // })
+        // minus.addEventListener('click', () => {
+        //     count--
+        //     num.innerText = count
+        //     console.log(this);
+            
+        // })
+        // reset.addEventListener('click', () => {
+        //     count = 0
+        //     num.innerText = 0
+        // })
+
+        // JavaScript
+        const buttons = document.querySelectorAll('button'); // select all buttons with class 'my-button'
+        
+        buttons.forEach(button => {
+                       
+            button.addEventListener('click', (e) => {
+                // console.log(e.target); 
+            // console.log(`You clicked: ${button.id}`);
+            // if(button.id == 'plus'){
+            //     count++
+            // }else if(button.id == 'minus'){
+            //     count--
+            // }else {
+            //     count = 0
+            // }
+            button.id == 'plus' ? count++ : button.id == 'minus' ? count-- : count = 0;
+            // if(count > 0){
+            //     num.style.color = 'green'
+            // }else if(count < 0) {
+            //     num.style.color = 'red'
+            // }else {
+            //     num.style.color = 'black'
+            // }
+            count > 0 ? num.style.color = 'green' : count < 0 ? num.style.color = 'red' : num.style.color = 'black'
+            num.innerText = count
+            });
+        });
+    
+
+
+
+    </script>
+</body>
+</html>
