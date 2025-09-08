@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            background-color: orangered;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        // const div = document.querySelector('div')
+
+        // // window.localStorage.setItem('myColor', 'red')
+        // let i = 0
+        // div.addEventListener('keypress', (e) => {
+        //     if(e.key === 'enter'){
+        //         e.preventDefault()
+        //         console.log(`Enter ${i+1}`);
+                
+        //     }
+        // })
+        // document.querySelector('div').style.background = window.localStorage.getItem('myColor')
+        document.addEventListener('keypress', e => {
+            console.log(e.key);
+            alert('You press Enter')
+        })
+    </script>
+</body>
+</html>
