@@ -58,6 +58,9 @@
             display: flex;
             justify-content: space-between;
         }
+        h4 {
+            margin: 0;
+        }
         button#del {
             background-color: #dc3545;
             color: #fff;
@@ -77,13 +80,15 @@
             <input type="text" name="" id="user-input" placeholder="Enter new task" autofocus>
             <button id="add">ADD TASK</button>
         </div>
-        <div id="new-task" class="checked">
-            Finish the project
-            <button id="del">Delete</button>
-        </div>
-        <div id="new-task">
-            Finish the project
-            <button id="del">Delete</button>
+        <div class="tasks-list">
+            <!-- <div id="new-task" class="checked">
+                <h4>Finish the project</h4>
+                <button id="del" onclick="delTask(this)">Delete</button>
+            </div>
+            <div id="new-task">
+                <h4>Finish the project</h4>
+                <button id="del" onclick="console.log(event.target)">Delete</button>
+            </div> -->
         </div>
 
     </div>
