@@ -51,7 +51,7 @@
         .container button:hover {
             filter: brightness(0.8);
         }
-        #new-task {
+        .new-task {
             background-color: rgb(250, 250, 250);
             padding: 10px;
             margin: 10px 0;
@@ -61,12 +61,13 @@
         h4 {
             margin: 0;
         }
-        button#del {
+        #del {
             background-color: #dc3545;
             color: #fff;
             padding: .3rem .5rem;
+            /* text-decoration: none; */
         }
-        .checked {
+        .checked :not(button) {
             color: #555;
             text-decoration: line-through;
         }
