@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to right, #B3FFAB, #12FFF7);
+            height: 100vh;
+            margin: 0;
+            font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            width: 450px;
+            padding: 1rem 2rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: -5px 10px 20px rgba(141, 141, 141, 30%);
+        }
+        button {
+            background-color: rgb(44, 119, 119);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            border: none;
+            padding: 6.4px 48px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.2s, transform 0.2s;
+            
+        }
+        button:hover {
+            background: linear-gradient(90deg, #00bcd4 0%, #009688 100%);;
+
+            transform: scale(1.03);
+        }
+    </style>
+    <title>Random Qute</title>
+</head>
+<body>
+    <div class="container">
+        <button id="btn">Random Quotes</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur aspernatur pariatur dicta voluptate dolorum? Sed et repudiandae error.</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
