@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Bubbling & Capturing Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .box {
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid black;
+    }
+    #outer { background-color: #e0f7fa; }
+    #middle { background-color: #b2ebf2; }
+    #inner { background-color: #4dd0e1; }
+    button { padding: 10px 15px; }
+  </style>
+</head>
+<body>
+
+  <h2>Event Bubbling & Capturing Demo</h2>
+
+  <!-- DOM Tree: outer > middle > inner -->
+  <div id="outer" class="box">
+    Outer
+    <div id="middle" class="box">
+      Middle
+      <div id="inner" class="box">
+        Inner
+        <button id="clickButton">Click Me</button>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>Event Delegation Example</h3>
+  <div id="buttonContainer">
+    <button>Button A</button>
+    <button>Button B</button>
+    <button>Button C</button>
+  </div>
+
+  <hr />
+
+  <h3>Stopping Propagation Example</h3>
+  <div id="stopOuter" class="box" style="background-color: #ffcdd2;">
+    Stop Outer
+    <button id="stopButton">Click Me (Stop Propagation)</button>
+  </div>
+
+  <script>
+    // 1. Bubbling Example (default behavior)
+    document.getElementById("outer").addEventListener("click", () => {
+      console.log("BUBBLING: Outer clicked");
+    });
+
+    document.getElementById("middle").addEventListener("click", () => {
+      console.log("BUBBLING: Middle clicked");
+    });
+
+    document.getElementById("inner").addEventListener("click", () => {
+      console.log("BUBBLING: Inner clicked");
+    });
+
+    document.getElementById("clickButton").addEventListener("click", () => {
+      console.log("BUBBLING: Button clicked");
+    });
+
+    // 2. Capturing Example
+    document.getElementById("outer").addEventListener("click", () => {
+      console.log("CAPTURING: Outer clicked");
+    }, true); // capture = true
+
+    document.getElementById("middle").addEventListener("click", () => {
+      console.log("CAPTURING: Middle clicked");
+    }, true);
+
+    document.getElementById("inner").addEventListener("click", () => {
+      console.log("CAPTURING: Inner clicked");
+    }, true);
+
+    // 3. Stop Propagation Example
+    document.getElementById("stopOuter").addEventListener("click", () => {
+      console.log("Stop Outer DIV clicked");
+    });
+
+    document.getElementById("stopButton").addEventListener("click", (e) => {
+      e.stopPropagation(); // stops event from bubbling to stopOuter
+      console.log("Button with stopPropagation clicked");
+    });
+
+    // 4. Event Delegation Example
+    document.getElementById("buttonContainer").addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        console.log("Delegated Click:", e.target.textContent);
+      }
+    });
+  </script>
+</body>
+</html>
