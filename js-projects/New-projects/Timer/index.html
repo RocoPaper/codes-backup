@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .watch-container {
+            background-color: white;
+            text-align: center;
+            width: 500px;
+            padding: 1rem;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .wrapper {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        button {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.25s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        button#stop-btn {
+            background: linear-gradient(135deg, #E53935, #B71C1C);
+        }
+    </style>
+    <title>Timer</title>
+</head>
+<body>
+    <div class="watch-container">
+        <h1>Stop Watch</h1>
+        <div class="wrapper">
+            <p id="hr">00</p>
+            <p> : </p>
+            <p id="min">00</p>
+            <p> : </p>
+            <p id="sec">00</p>
+        </div>
+        <button id="start-btn">Start</button>
+        <button id="stop-btn">Stop</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
