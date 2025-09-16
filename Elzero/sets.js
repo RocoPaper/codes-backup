@@ -91,3 +91,15 @@ const emptyObj = Object.create(null)
 
 console.log(normalObj)
 console.log(emptyObj)
+
+
+//* Final Challenge */
+
+let n1 = [10, 30, 10, 20]
+let n2 = [30, 20, 10]
+
+let n3 = new Set([...n1, ...n2])
+
+console.log(n3)
+
+console.log(n3.reduce(((acu, val) => acu +val)))
