@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RegEx</title>
 </head>
 <body>
-    
+
+    <form id="register" action="" method="get">
+    <input type="text" id="phone" name="the-phone" maxlength="15" />
+    <input type="submit" value="Register" />
+    </form>
+
+
 
     <!-- <script src="map.js"></script> -->
-    <script src="RegEx.js"></script>
+    <!-- <script src="RegEx.js"></script> -->
+
+    <script>
+        // document.getElementById('btn').onsubmit = function() {
+        //     const phoneInput = document.getElementById('phone').value;
+        //     const phoneRe = /\(\d{3}\)\s\d{3}-\d{4}/
+        //     const valuidation = phoneInput.test(phoneRe)
+        //     // if(!valuidation) return false
+        //     // return true
+        //     if(!valuidation) console.log(false);
+            
+        //     return console.log(true)
+        // }
+
+
+        document.getElementById("register").onsubmit = function () {
+            let phoneInput = document.getElementById("phone").value;
+            let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/; // (1234) 567-8910
+            let validationResult = phoneRe.test(phoneInput);
+            if (validationResult === false) {
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>

@@ -127,10 +127,67 @@ let urls = "https://google.com http://www.website.net web.com"; // http + https
 let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
 console.log(urls.match(urlsRe));
 
+/*
+  Quantifiers
+  n{x}   => Number of
+  n{x,y} => Range
+  n{x,}  => At Least x
+*/
+
+let serials = "S100S S3000S S50000S S950000S";
+
+console.log(serials.match(/s\d{3}s/ig)); // S[Three Number]S
+console.log(serials.match(/s\d{4,5}s/ig)); // S[Four Or Five Number]S
+console.log(serials.match(/s\d{4,}s/ig)); // S[At Least Four]S
+
+/*
+  Quantifiers
+  $  => End With Something
+  ^  => Start With Something
+  ?= => Followed By Something
+  ?! => Not Followed By Something
+*/
+
+let myString1 = "We Love Programming";
+let names1 = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+console.log(/ing$/ig.test(myString1)); //true | End With ing
+console.log(/^we/ig.test(myString1)); //true | Start With We
+console.log(/lz$/ig.test(names1)); //true | End With LZ
+console.log(/^\d/ig.test(names1)); //true | Start With digit
+
+console.log(names1.match(/\d\w{5}z/ig));
+console.log(names.match(/\d\w{5}(?=Z)/ig));
+console.log(names.match(/\d\w{8}(?!Z)/ig));
+
+/*
+  Regular Expression
+  - replace
+  - replaceAll
+*/
+
+let txt = "We Love Programming And @ Because @ Is Amazing";
+console.log(txt.replace("@", "JavaScript"));
+console.log(txt.replaceAll("@", "JavaScript"));
+console.log(txt.replaceAll(/@/ig, "JavaScript"));
 
 
 
+/*
+  Regular Expression
+  - Challenge
+*/
 
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.org';
+let url4 = 'https://www.elzero.org';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
+let r = //;
 
-
+console.log(url1.match(r));
+console.log(url2.match(r));
+console.log(url3.match(r));
+console.log(url4.match(r));
+console.log(url5.match(r));
