@@ -1,0 +1,31 @@
+:root {
+    --primary-clr: #0588F0;
+    --secondary-clr: #F0A202;
+    --background-clr: #F5F5F5;
+    --text-clr: #333333;
+    --font-family: 'Arial', sans-serif;
+    --border-radius: 5px;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-clr);
+    color: var(--text-clr);
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container {
+    background-color: #fff;
+    width: 90%;
+    max-width: 550px;
+    margin-top: 5vh;
+}
