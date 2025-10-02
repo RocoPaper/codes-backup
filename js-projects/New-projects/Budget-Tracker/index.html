@@ -11,14 +11,27 @@
         <div class="container">
             <h1>💰 Budget Tracker</h1>
             <h2>Balance: <Span>$1400.00</Span></h2>
-            <input type="text">
-            <input type="text">
-            <button id="add-btn">Add Transaction</button>
+            <input type="text" required placeholder="Transaction Description">
+            <input type="number" required placeholder="Amount">
+            <select class="type-select">
+                <!-- <option value="" disabled selected>Type</option> -->
+                <option value="income">💸 Income</option>
+                <option value="expense">💳 Expense</option>
+            </select>
+            <button id="add-btn" class="submit-button">Add Transaction</button>
         </div>
         <div class="container">
             <h2>Transactions</h2>
-            <div class="entry"><p>Web Development</p><p>$1200</p><button></button></div>
-            <div class="entry"><p>Utility Bill</p><p>$200</p><button></button></div>
+            <div class="entry income">
+                <p>Web Development</p>
+                <div>
+                <p class="amount">$1200</p><button>Delete</button>
+            </div></div>
+            <div class="entry expense">
+                <p>Utility Bill</p>
+                <div>
+                <p class="amount">$200</p><button>Delete</button>
+            </div></div>
         </div>
     </main>
 </body>
