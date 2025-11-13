@@ -10,7 +10,7 @@
     <main>
         <div class="container">
             <h1>💰 Budget Tracker</h1>
-            <h2>Balance: <Span id="balance">$1400.00</Span></h2>
+            <h2>Balance: $<Span id="balance">0</Span>.00</h2>
             <input type="text" required placeholder="Transaction Description">
             <input type="number" required placeholder="Amount">
             <select class="type-select">
@@ -22,7 +22,7 @@
         </div>
         <div class="container">
             <h2>Transactions</h2>
-            <div class="entry income">
+            <!-- <div class="entry income">
                 <p>Web Development</p>
                 <div>
                 <p class="amount">$1200</p><button>Delete</button>
@@ -30,8 +30,8 @@
             <div class="entry expense">
                 <p>Utility Bill</p>
                 <div>
-                <p class="amount">$200</p><button>Delete</button>
-            </div></div>
+                <p class="amount">$200</p><button onclick="deleteThis(this)">Delete</button>
+            </div></div> -->
         </div>
     </main>
     <script src="app.js"></script>
