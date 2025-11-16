@@ -123,6 +123,13 @@ main {
 /* .amount {
     font-size: 1.125rem;
 } */
+
+.amount-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
 .entry button {
     background-color: #dc3545;
     color: #fff;
